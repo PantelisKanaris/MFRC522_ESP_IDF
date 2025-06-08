@@ -66,6 +66,8 @@
     "future": "c",
     "optional": "c",
     "cstdlib": "c",
-    "cstddef": "c"
+    "cstddef": "c",
+    "mfrc522.h": "c",
+    "freertos.h": "c"
   }
 }

@@ -117,7 +117,7 @@ esp_err_t WriteToRegister(uint8_t addr, uint8_t val)
 uint8_t ReadFromRegister(uint8_t addr)
 {
     if (device_m == NULL)
-        return 0;
+        return 0XFF;
 
     uint8_t tx_data[2];
     uint8_t rx_data[2];
@@ -154,7 +154,7 @@ void SetBitMask(uint8_t addr, uint8_t mask)
 {
     uint8_t current;
     current = ReadFromRegister(addr);
-    if (current == 0)
+    if (current == 0XFF)
     {
         ESP_LOGE(TAG, "Failed to read from register\n");
     }
@@ -175,7 +175,7 @@ void ClearBitMask(uint8_t addr, uint8_t mask)
 {
     uint8_t current;
     current = ReadFromRegister(addr);
-    if (current == 0)
+    if (current == 0XFF)
     {
         ESP_LOGE(TAG, "Failed to read from register\n");
     }
@@ -210,7 +210,7 @@ void Begin()
     WriteToRegister(TxAutoReg, 0x40); // 100%ASK
     WriteToRegister(ModeReg, 0x3D);   // CRC initial value 0x6363
 
-    setBitMask(TxControlReg, 0x03); // Turn antenna on.
+    SetBitMask(TxControlReg, 0x03); // Turn antenna on.
 }
 
 /**************************************************************************/

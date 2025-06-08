@@ -14,7 +14,12 @@
 #ifndef MFRC522_H
 #define MFRC522_H
 #include "driver/spi_master.h"
-#include <stdint.h>
+#include "MFRC522.h"
+#include "esp_err.h"
+#include "driver/gpio.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "esp_log.h"
 
 #define MAX_LEN 16 // Maximum length of an array.
 
@@ -130,7 +135,7 @@ typedef struct Mfrc522_t
 } Mfrc522_t;
 
 
-
+  esp_err_t Initialize(spi_host_device_t host, gpio_num_t sda_pin, gpio_num_t reset_pin, gpio_num_t mosi, gpio_num_t miso, gpio_num_t sclk);
   esp_err_t WriteToRegister(uint8_t addr, uint8_t val);
   uint8_t ReadFromRegister(uint8_t addr);
   void SetBitMask(uint8_t addr, uint8_t mask);

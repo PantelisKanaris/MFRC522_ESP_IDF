@@ -65,6 +65,7 @@
     "random": "c",
     "future": "c",
     "optional": "c",
-    "cstdlib": "c"
+    "cstdlib": "c",
+    "cstddef": "c"
   }
 }

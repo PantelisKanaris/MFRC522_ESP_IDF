@@ -25,8 +25,8 @@
 
 // MF522 Command word
 #define MFRC522_IDLE 0x00       // NO action; Cancel the current command
-#define MFRC522_MEM 0x01        // Store 25 byte into the internal buffer.
-#define MFRC522_GENID 0x02      // Generates a 10 byte random ID number.
+#define MFRC522_MEM 0x01        // Store 25 uint8_t into the internal buffer.
+#define MFRC522_GENID 0x02      // Generates a 10 uint8_t random ID number.
 #define MFRC522_CALCCRC 0x03    // CRC Calculate or selftest.
 #define MFRC522_TRANSMIT 0x04   // Transmit data
 #define MFRC522_NOCMDCH 0x07    // No command change.
@@ -128,5 +128,25 @@ typedef struct Mfrc522_t
     gpio_num_t sda_pin;
     gpio_num_t reset_pin;
 } Mfrc522_t;
+
+
+
+  esp_err_t WriteToRegister(uint8_t addr, uint8_t val);
+  uint8_t ReadFromRegister(uint8_t addr);
+  void SetBitMask(uint8_t addr, uint8_t mask);
+  void ClearBitMask(uint8_t addr, uint8_t mask);
+  void Begin();
+  void Reset();
+  uint8_t GetFirmwareVersion();
+  bool DigitalSelfTestPass();
+  int CommandTag(uint8_t command, uint8_t *data, int dlen, uint8_t *result, int *rlen);
+  int RequestTag(uint8_t mode, uint8_t *type);
+  int AntiCollision(uint8_t *serial);
+  void CalculateCRC(uint8_t *data, int len, uint8_t *result);
+  uint8_t SelectTag(uint8_t *serial);
+  int Authenticate(uint8_t mode, uint8_t block, uint8_t *key, uint8_t *serial);
+  int ReadFromTag(uint8_t blockAddr, uint8_t *recvData);
+  int WriteToTag(uint8_t blockAddr, uint8_t *writeData);
+  int HaltTag();
 
 #endif

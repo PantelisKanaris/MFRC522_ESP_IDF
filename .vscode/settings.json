@@ -56,14 +56,15 @@
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
-  "cmake.ignoreCMakeListsMissing": true,
   "files.associations": {
-    "stdio.h": "c",
-    "esp_timer.h": "c",
-    "esp_log.h": "c",
-    "freertos.h": "c",
-    "i2c.h": "c",
+    "spi_master.h": "c",
     "esp_err.h": "c",
-    "i2clite.h": "c"
+    "gpio.h": "c",
+    "bitset": "c",
+    "memory": "c",
+    "random": "c",
+    "future": "c",
+    "optional": "c",
+    "cstdlib": "c"
   }
 }

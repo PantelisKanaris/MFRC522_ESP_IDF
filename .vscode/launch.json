@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Pantelis/Desktop/ESP/HelloWorld/main",
-      "program": "c:/Users/Pantelis/Desktop/ESP/HelloWorld/main/build/Debug/outDebug",
+      "cwd": "c:/Users/Pantelis/Desktop/ESP/MFRC522_ESP_IDF/MFRC522_Library/main/Driver",
+      "program": "c:/Users/Pantelis/Desktop/ESP/MFRC522_ESP_IDF/MFRC522_Library/main/Driver/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
